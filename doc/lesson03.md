@@ -29,7 +29,7 @@
 #### Apply 1-HW2-repository.patch
 > - В репозиториях по другому инстанциировал компараторы. [Оптимизация анонимных классов](http://stackoverflow.com/questions/19718353) не требуется! Почитайте комменты от Holger: *Java 8 relieves us from the need to think about such things at all*.
 > - Зарефакторил `<T extends Comparable<? super T>> DateTimeUtil.isBetween(T value, T start, T end)`. Дженерики означают, что мы принимаем экземпляры класса, который имплементит компаратор, который умеет сравнивать T или суперклассы от T
-> - В `InMemoryMealRepositoryImpl.save()` сделал обновление атомарным. В варианте `computeIfPresent` (см. псевдокод в `Map.computeIfPresent`) удаление элемента `if (newValue == null) remove` не исмользуем, т.к. возвращаем ненулевое новое значение. Используем только атомарность `put`, те вместо 2х операций, разнесенных во времени
+> - В `InMemoryMealRepositoryImpl.save()` сделал обновление атомарным. В варианте `computeIfPresent` (см. псевдокод в `Map.computeIfPresent`) удаление элемента `if (newValue == null) remove` не исмользуем, т.к. возвращаем ненулевое новое значение. Используем только атомарноный `put`, если элемент присутствует, те вместо 2х операций, разнесенных во времени
 >   -  1  проверка `get(meal.getId(), userId)`
 >   -  2 `meals.put(meal.getId(), meal)`
 между которыми может быть например операция удаления этой еды из другого потока делаем одну атомарную операцию

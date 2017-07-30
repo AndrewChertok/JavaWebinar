@@ -35,8 +35,6 @@
 между которыми может быть например операция удаления этой еды из другого потока делаем одну атомарную операцию
 >   -  1 `meals.computeIfPresent`. `ConcurrentHashMap` в отличии от `HasnMap` делает операции атомарно.
 
-
-
 #### Apply 2-HW2-meal-layers.patch
 > - Перенес обработку null-дат  в `MealRestController.getBetween()`
 > - По аналогии с `AbstractUserController` добавил проверку id пользователя, пришедшего в контроллер (`checkIdConsistent`, `checkNew`)
@@ -94,7 +92,7 @@
 -  <a href="https://ru.wikipedia.org/wiki/PostgreSQL">PostgreSQL</a>.
 -  [PostgreSQL JDBC Driver](https://github.com/pgjdbc/pgjdbc)
 -  <a href="http://java-course.ru/begin/postgresql/">Установка PostgreSQL</a>. **ВНИМАНИЕ! с postgres 9.6 возможны проблемы.** 
--  Чтобы избежать проблем с правами и именами каталогов, [**рекомендуют установить postgres в простой каталог, например `C:\Postgresql`**](https://stackoverflow.com/questions/43432713/postgresql-installation-on-windows-8-1-database-cluster-initialisation-failed)
+-  Чтобы избежать проблем с правами и именами каталогов, [**рекомендуют установить postgres в простой каталог, например `C:\Postgresql`**](https://stackoverflow.com/questions/43432713/postgresql-installation-on-windows-8-1-database-cluster-initialisation-failed). Если Unix, проверить права папки.
     
 > Создать в pgAdmin новую базу `topjava` и новую роль `user`, пароль `password`
 

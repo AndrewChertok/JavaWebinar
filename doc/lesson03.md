@@ -94,7 +94,7 @@
 -  <a href="https://ru.wikipedia.org/wiki/PostgreSQL">PostgreSQL</a>.
 -  [PostgreSQL JDBC Driver](https://github.com/pgjdbc/pgjdbc)
 -  <a href="http://java-course.ru/begin/postgresql/">Установка PostgreSQL</a>. **ВНИМАНИЕ! с postgres 9.6 возможны проблемы.** 
-  -  <a href="http://www.teamlead.ru/pages/viewpage.action?pageId=75465393">Решение проблемы устновки `Problem running post-install step. Installation may not complete correctly. The database cluster inicialisation failed.`</a>
+-  Чтобы избежать проблем с правами и именами каталогов, [**рекомендуют установить postgres в простой каталог, например `C:\Postgresql`**](https://stackoverflow.com/questions/43432713/postgresql-installation-on-windows-8-1-database-cluster-initialisation-failed)
     
 > Создать в pgAdmin новую базу `topjava` и новую роль `user`, пароль `password`
 

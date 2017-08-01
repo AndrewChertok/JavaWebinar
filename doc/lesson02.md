@@ -63,7 +63,8 @@
 #### Apply 2_3_app_layers.patch
 > - Переименовал `ExceptionUtil` в `ValidationUtil`
 > - Поменял `LoggedUser` на `AuthorizedUser`
-> - Добавил проверку id пользователя, пришедшего в контроллер ([treat IDs in REST body](http://stackoverflow.com/a/32728226/548473))
+> - Добавил проверку id пользователя, пришедшего в контроллер ([treat IDs in REST body](https://stackoverflow.com/a/32728226/548473)):
+"If it is a public API you should be conservative when you reply, but accept liberally."
 
 -  <a href="http://en.wikipedia.org/wiki/Multilayered_architecture">Паттерн "Слои приложения"</a>
 -  <a href="https://www.genuitec.com/products/myeclipse/learning-center/spring/myeclipse-for-spring-reference-blueprints/">Архитектурные слои приложения в Spring</a>

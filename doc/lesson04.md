@@ -3,6 +3,8 @@
 ### <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFfkxqbVpwZUd5anQ2TXE4bm5HbXhtVmkxMUxFSjhNQ1hXYVVTTTZEMzkzN2s">Материалы занятия (скачать все патчи можно через Download папки patch)</a>
 
 ### ![error](https://cloud.githubusercontent.com/assets/13649199/13672935/ef09ec1e-e6e7-11e5-9f79-d1641c05cbe6.png) Правки в проекте
+#### **Apply 0-fix.patch.patch**
+
 - Переименовал методы сервисов `save` в `create` (алологично методам `create\update` в контроллерах)
 - Пофиксил UTF-8 в `DbPopulator` и добавил ы`NOT NULL` для дефолтных полей `users`
 - Переименовал `ValidationUtil.checkIdConsistent` в `assureIdConsistent` (возможен `setId`)

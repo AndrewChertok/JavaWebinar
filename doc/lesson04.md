@@ -9,7 +9,7 @@
 - Заменил `Integer.valueOf` на `Integer.parseInt` (получаем сразу int)
 - Добавил комментарии и отформатировал шапку в `spring-db.xml`
 
-*Примечание: в ответе на [Why is SELECT * considered harmful?](https://stackoverflow.com/questions/3639861)* есть случаи, когда она допустима (наш случай): *When * means "a row"* (хотя лично я на проектах не встречал требований не использовать *).
+**Примечание**: в ответе на [Why is SELECT * considered harmful?](https://stackoverflow.com/questions/3639861)* есть случаи, когда она допустима (наш случай): *When * means "a row"* (хотя лично я на проектах не встречал требований не использовать *).
 
 ## ![hw](https://cloud.githubusercontent.com/assets/13649199/13672719/09593080-e6e7-11e5-81d1-5cb629c438ca.png) Разбор домашнего задания HW3
 
@@ -24,7 +24,7 @@
 > - Удалил лишние `MealsUtil.MEALS` и `main()`
 
 - <a href="http://www.techonthenet.com/postgresql/between.php">POSTGRESQL: BETWEEN CONDITION</a>
-- **[сравнение времени выполнения для разных индексов](meals_index.md)**
+- **[Сравнение времени выполнения для разных индексов](meals_index.md)**
   - <a href="http://stackoverflow.com/questions/970562/postgres-and-indexes-on-foreign-keys-and-primary-keys">На id как на primary key индекс создается автоматически</a>.
   - все запросы в таблицу meals у нас идут с `user_id`
   - по полю `date_time` также есть запросы + мы по нему сортируем список результатов, те они- хорошие кандидаты для индексирования. 
@@ -38,7 +38,7 @@
 
 ## Занятие 4:
 ### ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) 2. <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFU005ZzBNZmZnTVU">Методы улучшения качества кода</a>
-**Внимание!! В IDEA 2017.1 и 2 любой QAPlugin у меня крэшится**. Можно заменить [FindBugs-IDEA](http://andrepdo.github.io/findbugs-idea)
+**Внимание!! В IDEA 2017.1 и 2 любой QAPlugin крэшится**. Можно заменить [FindBugs-IDEA](http://andrepdo.github.io/findbugs-idea)
 
 Сделайте интеграцию своего репозитория и подключите сверху своего [README.md](https://github.com/JavaWebinar/topjava/blob/master/README.md) ([Raw](https://raw.githubusercontent.com/JavaWebinar/topjava/master/README.md)) интергацию с
   - <a href="https://www.codacy.com">Codacy Check code</a> (проверка стиля и поиск багов в коде). В <a href="https://www.codacy.com/app/javawebinar/topjava/dashboard">Codacy Issues</a> 
@@ -197,7 +197,7 @@ Hibernate (как любая ORM) реализует маппинг таблиц
         meal.setUser(ref);
 
    При этом от User нам нужет только id, т.е. реального запроса в базу за юзером не будет- проверьте по логам Hibernate
->  **Внимание: проверять надо через run. Если делаете debug и брекпойнт, то делается запрос к базе (дебаггер дергает `toString`)**
+>  **Внимание*: проверять запросы Hibernate нужно через run. Если делаете debug и брекпойнт, то могут делаться лишние запросы к базе (дебаггер дергает `toString`)**
    
 - 2: В JPQL запросах можно писать: `m.user.id=:userId`
 - 3: При реализации `JpaMealRepositoryImpl` предпочтительно не использовать `try-catch` в логике реализации. Но если очень хочется, то ловить только специфичекские эксепшены (пр. `NoResultException`), чтобы, например, при отсутствии коннекта к базе приложение отвечало адекватно.
@@ -207,9 +207,9 @@ Hibernate (как любая ORM) реализует маппинг таблиц
 Новая информация плохо оседает в голове, когда дается в виде патчей, поэтому, чтобы она стала "твоей" нужно еще раз проделать это самостоятельно. Домашнее задание на этом уроке небольшое, а полученных знаний уже достаточно, чтобы после его выполнения начинать делать выпускной проект, сделанный на нашем стеке.
 ## [Выпускной проект](graduation.md)
 - Для проекта я взял реальное тестовое задание, поэтому жалоб не неясность формулировок принимать не буду- сделайте как поняли. Представьте, что это ваше тестовое задание на работу.
-- Общение в канале <a href="">graduate_project</a>
+- Общение в канале <a href="https://topjava11.slack.com/messages/C6HE35ZQS">graduate_project</a>
 - Ревью проекта входит в участие с проверкой домашних заданий (ревьюится один раз!). Отдать на ревью нужно до 19.10.
 - По завершению ты сможешь занести этот проект в свое портфолио и резюме как собственный, без всяких оговорок.
-- Обязательно проверяйся по рекомендациям в конце задания
+- Обязательно проверяйся [по рекомендациям в конце выпускного](https://github.com/JavaWebinar/topjava/blob/lesson/doc/graduation.md#-Рекомендации)
 
 ### Успехов в выполнении!

@@ -14,7 +14,7 @@
 #### Apply 3_0_2_constructor_di_.patch
 - Сделал для `UserServiceImpl` *Constructor Injection*. Выигрыш: final поля, независимость от контейнера
   - [Field vs Constructor vs Setter DI](http://stackoverflow.com/questions/39890849/what-exactly-is-field-injection-and-how-to-avoid-it)
-  - [Field Dependency Injection Considered Harmful](http://vojtechruzicka.com/field-dependency-injection-considered-harmful/)
+  - [Перевод "Field Dependency Injection Considered Harmful"](https://habrahabr.ru/post/334636/)
   - [Inject 2 beans of same type](https://stackoverflow.com/a/2153680/548473)
   - [Implicit constructor injection for single-constructor scenarios](https://spring.io/blog/2016/03/04/core-container-refinements-in-spring-framework-4-3#implicit-constructor-injection-for-single-constructor-scenarios)
     - Аннотации `@Autowired` над конструктором оставил. IDEA понимает и думаю лучше делать это явным. 

@@ -6,6 +6,8 @@
 
 _Антуан де Сент-Экзюпери_
 
+-------------------------------
+
 Design and implement a REST API using Hibernate/Spring/SpringMVC (or Spring-Boot) **without frontend**.
 
 The task is:

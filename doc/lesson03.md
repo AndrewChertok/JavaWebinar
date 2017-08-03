@@ -244,10 +244,11 @@ UNIQUE индекс нужен для обеcпечения уникальнос
 
 ### ![error](https://cloud.githubusercontent.com/assets/13649199/13672935/ef09ec1e-e6e7-11e5-9f79-d1641c05cbe6.png) Проверка по HW03 (сначала сделайте самостоятельно!)
 
-- В `MealTestData` еду делайте константами. Не надо `Map` конструкций!
-- SQL  case-insensitive, не надо писать в стиле Camel. В POSTGRES возможны case-sensitive значения, их надо в кавычки заключать (обычно не делают).
-- ЕЩЕ РАЗ: `InMemory` тесты должны идти на `InMemory` репозитории
-- **Проверьте, что возвращает `JdbcMealRepositoryImpl` при обновлении чужой еды**
-- В реализации `JdbcMealRepositoryImpl` одним SQL запросом используйте возвращаемое `update` значение `the number of rows affected`
-- При тестировании не портите констант из `MealTestData`
-- Для `MealTestData.MATCHER` можно использовать конструктор `BeanMatcher` без параметров (`equality` по умолчанию)
+- 1: В `MealTestData` еду делайте константами. Не надо `Map` конструкций!
+- 2: SQL  case-insensitive, не надо писать в стиле Camel. В POSTGRES возможны case-sensitive значения, их надо в кавычки заключать (обычно не делают).
+- 3: ЕЩЕ РАЗ: `InMemory` тесты должны идти на `InMemory` репозитории
+- 4: **Проверьте, что возвращает `JdbcMealRepositoryImpl` при обновлении чужой еды**
+- 5: В реализации `JdbcMealRepositoryImpl` одним SQL запросом используйте возвращаемое `update` значение `the number of rows affected`
+- 6: При тестировании не портите констант из `MealTestData`
+- 7: Для `MealTestData.MATCHER` можно использовать конструктор `BeanMatcher` без параметров (`equality` по умолчанию)
+- 8: Проверьте, что все, что относится к тестам, ноходится в каталоге `test` (не попадает в сборку проекта)

@@ -9,7 +9,8 @@
 - Заменил `Integer.valueOf` на `Integer.parseInt` (получаем сразу int)
 - Добавил комментарии и отформатировал шапку в `spring-db.xml`
 
-**Примечание**: в ответе на [Why is SELECT * considered harmful?](https://stackoverflow.com/questions/3639861) есть случаи, когда она допустима (наш случай): *When * means "a row"* (хотя лично я на проектах не встречал требований не использовать *).
+**Примечание**: в ответе на [Why is SELECT * considered harmful?](https://stackoverflow.com/questions/3639861) есть случаи, когда она допустима (наш случай):
+> When * means "a row"
 
 ## ![hw](https://cloud.githubusercontent.com/assets/13649199/13672719/09593080-e6e7-11e5-81d1-5cb629c438ca.png) Разбор домашнего задания HW3
 

@@ -83,7 +83,9 @@
 > - [EL implementation provided by the container. In a Java SE you have to add an implementation as dependency to your POM file](http://hibernate.org/validator/documentation/getting-started/#unified-expression-language-el): добавил `javax.el` зависимость со `scope=provided`
 
 #### **Apply 6-add-jpa.patch**
-> Тесты и приложение ломаются. `MealServiceTest` починится после выполнения HW04 (`JpaMealRepositoryImpl`)
+> - Тесты и приложение ломаются. `MealServiceTest` починится после выполнения HW04 (`JpaMealRepositoryImpl`)
+> - При [настройке JPA в IDEA](https://github.com/JavaOPs/topjava/wiki/IDEA#%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C-jpa) НЕ скачивайте библиотеку javaee.jar (и любую другую). Все зависимости в проект попадают только через Maven.
+
 - Дополнительно:
     -  <a href="http://ru.wikipedia.org/wiki/ORM">ORM</a>.
     -  <a href="http://habrahabr.ru/post/265061/">JPA и Hibernate в вопросах и ответах</a>

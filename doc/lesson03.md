@@ -29,19 +29,19 @@
 #### Apply 1-HW2-repository.patch
 > - В репозиториях по другому инстанциировал компараторы. [Оптимизация анонимных классов](http://stackoverflow.com/questions/19718353) не требуется! Почитайте комменты от Holger: *Java 8 relieves us from the need to think about such things at all*.
 > - Зарефакторил `<T extends Comparable<? super T>> DateTimeUtil.isBetween(T value, T start, T end)`. Дженерики означают, что мы принимаем экземпляры класса, который имплементит компаратор, который умеет сравнивать T или суперклассы от T
-> - В `InMemoryMealRepositoryImpl.save()` сделал обновление атомарным. В варианте `computeIfPresent` (см. псевдокод в `Map.computeIfPresent`) удаление элемента `if (newValue == null) remove` не исмользуем, т.к. возвращаем ненулевое новое значение. Используем только атомарноный `put`, если элемент присутствует, те вместо 2х операций, разнесенных во времени
+> - В `InMemoryMealRepositoryImpl.save()` сделал обновление атомарным. В варианте `computeIfPresent` (см. псевдокод в `Map.computeIfPresent`) удаление элемента `if (newValue == null) remove` не используем, т.к. возвращаем ненулевое новое значение. Используем только атомарноный `put`, если элемент присутствует, те вместо 2х операций, разнесенных во времени
 >   -  1  проверка `get(meal.getId(), userId)`
 >   -  2 `meals.put(meal.getId(), meal)`
 между которыми может быть например операция удаления этой еды из другого потока делаем одну атомарную операцию
->   -  1 `meals.computeIfPresent`. `ConcurrentHashMap` в отличии от `HasnMap` делает операции атомарно.
+>   -  1 `meals.computeIfPresent`. `ConcurrentHashMap` в отличии от `HashMap` делает операции атомарно.
 
 #### Apply 2-HW2-meal-layers.patch
 > - Перенес обработку null-дат  в `MealRestController.getBetween()`
-> - По аналогии с `AbstractUserController` добавил проверку id пользователя, пришедшего в контроллер (`checkIdConsistent`, `checkNew`)
+> - По аналогии с `AbstractUserController` добавил проверку id пользователя, пришедшего в `MealRestController` (`checkIdConsistent`, `checkNew`)
 
 #### Apply 3-HW2-optional-MealServlet.patch
 > - Убрал логирование (уже есть в контроллере)
-> - С `checkIdConsistent` мы можем в контроллере обновлять еду с `id=null`
+> - `checkIdConsistent` позволяет в контроллере обновлять еду с `id=null`
 
 #### Apply 4-HW2-optional-filter.patch
 > - Вместо `MealServlet.resetParam` (перемещение параметров фильтрации в аттрибуты запроса для отображения в `meals.jsp`), достаю их в jsp напрямую из запроса через [`${param.xxx}`](https://stackoverflow.com/a/1890462/548473)
@@ -113,6 +113,9 @@
   - <a href="http://campus.codeschool.com/courses/try-sql">Try SQL</a>
   - <a href="http://java-course.ru/begin/database01/">Базы данных на Java</a>
   - <a href="http://java-course.ru/begin/database02/">Возможности JDBC — второй этап</a>
+- Дополнительно:
+  - [Документация к PostgreSQL 9.6](https://postgrespro.ru/docs/postgresql/9.6/index.html)
+  - [Книги по PostgreSQL](https://postgrespro.ru/education/books)
 
 ### ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) 7. <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFQWtHYU1qTDlMWVE">Настройка Database в IDEA.</a>
 #### Apply 9-add-postgresql.patch
@@ -209,7 +212,8 @@ UNIQUE индекс нужен для обеcпечения уникальнос
 - 4 Проверить работу MealServlet, запустив приложение
 
 #### Optional
-- 5 Сделать `MealServiceTest` из `MealService` (`Ctrl+Shift+T` и выбрать JUnit4) и реализовать тесты.
+- 5 Сделать `MealServiceTest` из `MealService` и реализовать тесты.
+> По `Ctrl+Shift+T` (выбрать JUnit4) можно создать тест для конкретного класса, выбрав для него нужные методы. Тестовый класс создастся в папке `test` в том же пакете, что и тестируемый. 
   - 5.1 Сделать тестовые данные `MealTestData`, АНАЛОГИЧНЫЕ пропопулированным в `populateDB.sql`. Сравниваем данные через `MealTestData.MATCHER`
   - 5.2 Сделать тесты на чужую еду (delete, get, update) с тем чтобы получить `NotFoundException`.
 - 6 Предложить решение, как почнинить `SpringMain, InMemory*Test`. `InMemory*Test` должны использовать реализацию в памяти

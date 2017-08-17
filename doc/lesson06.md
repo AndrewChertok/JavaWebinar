@@ -10,6 +10,8 @@
 
 Транзакция начинается, когда встречается первый `@Transactional`. С default propagation `REQUIRED` остальные `@Transactional` просто участвуют в первой. Поэтому ставим ее сверху `DataJpaMealRepositoryImpl.save()`, чтобы все обращения к базе внутри метода были в одной транзакции. Анологично, если из сервиса собирается несколько запросов в репозитории, он ставится над методом сервиса.
 
+> **!! Внимание! Перед накаткой патча переименуйте (`Shift+F6`) `MealServiceTest.resultLog` в `MealServiceTest.log` (моя ошибка с патчем `5_4_log_colored`). Или потренируйтесь с merge при накатке патча (пригодится).**
+
 #### Apply 02_HW5_profile_test.patch
 **Для IDEA не забудте выставить Spring Profiles в `spring-db.xml`: нарпимер `datajpa, postgres`**
 

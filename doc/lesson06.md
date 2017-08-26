@@ -288,3 +288,4 @@ _ru.javawebinar.topjava.model.User_ - имя региона, которое ис
 - 6: В MealController общую часть `@RequestMapping(value = "/meals")` лучше вынести на уровень класса
 - 7: Не забывайте при реализации `JdbcUserRepositoryImpl` про `Map.computeIfAbsent` и `EnumSet`
 - 8: Проверьте `@Transactional(readOnly = true)` сверху `Jdbc..RepositoryImpl`
+- 9: Проверьте, что `config\messages\app_ru.properties` у вас в кодировке UTF-8 (в любом редакторе/вьюере или при отключенном [Transparent native-to-ascii conversion](https://github.com/JavaOPs/topjava/wiki/IDEA#%D0%9F%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%B8%D1%82%D1%8C-%D0%BA%D0%BE%D0%B4%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D1%83-utf-8) в IDEA

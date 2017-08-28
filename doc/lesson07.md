@@ -100,7 +100,7 @@ GROUP BY u.id
 #### Apply 7_12_test_with_matcher.patch
 -  <a href="http://habrahabr.ru/post/259055/">Тестируем Spring Rest контроллеры</a>: проверка JSON-содержимого ответа через собственный ResultMatcher
 
-> - При запуске из Maven тесты начинают зависеть от порядка запуска.  Не проходил тест `ProfileRestControllerTest.testGet`, который шел за `AdminRestControllerTest.testUpdate`: после отката транзакции по `@Transactional` Hibernate кэш не восстанавливал роль для USER (доставалась null). 
+> При запуске из Maven тесты начинают зависеть от порядка запуска.  Не проходил тест `ProfileRestControllerTest.testGet`, который шел за `AdminRestControllerTest.testUpdate`: после отката транзакции по `@Transactional` Hibernate кэш не восстанавливал роль для USER (доставалась null). 
 Добавил очистку кэша Hibernate в `AbstractControllerTest.setUp`.
 
 - Если не использовать `ModelMatcher`, то тестировать приходится каждое поле, как в `RootControllerTest`.

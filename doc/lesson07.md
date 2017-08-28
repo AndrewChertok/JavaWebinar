@@ -5,7 +5,7 @@
 ### ![error](https://cloud.githubusercontent.com/assets/13649199/13672935/ef09ec1e-e6e7-11e5-9f79-d1641c05cbe6.png) Fix/Refactoring
 > В [README.md](https://raw.githubusercontent.com/JavaWebinar/topjava/master/README.md) заменил нерабочий [DependencyCi](https://dependencyci.com) на  [VersionEye](https://www.versioneye.com) (в том числе проверка зависимостей на актуальность)
 
-**Сделайте интеграцию в своем проекте**
+**Сделайте интеграцию в своем проекте самостоятельно**
  
 #### Apply 7_0_1_update_version.patch
 > Согласно [рапорту VersionEye](https://www.versioneye.com/user/projects/59a1dbe46725bd0037d98369) обновил версии зависимостей 

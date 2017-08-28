@@ -2,7 +2,7 @@
 
 ## <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFfjVnUVhINEg0d09Nb3JsY2ZZZmpsSWp3bzdHMkpKMmtPTlpjckxyVzg0SWc">Материалы занятия</a>
 
-### ![error](https://cloud.githubusercontent.com/assets/13649199/13672935/ef09ec1e-e6e7-11e5-9f79-d1641c05cbe6.png) Fix/Refactoring
+## ![error](https://cloud.githubusercontent.com/assets/13649199/13672935/ef09ec1e-e6e7-11e5-9f79-d1641c05cbe6.png) Fix/Refactoring
 > В [README.md](https://raw.githubusercontent.com/JavaWebinar/topjava/master/README.md) заменил нерабочий [DependencyCi](https://dependencyci.com) на  [VersionEye](https://www.versioneye.com) (в том числе проверка зависимостей на актуальность)
 
 **Сделайте интеграцию в своем проекте самостоятельно**
@@ -20,6 +20,8 @@
 
 #### Apply 7_0_4_mapping_change.patch
 > В Spring 4.3 ввели новые аннотации `@Get/Post/...Mapping` (сокращенный вариант `@RequestMapping`)
+
+## ![hw](https://cloud.githubusercontent.com/assets/13649199/13672719/09593080-e6e7-11e5-81d1-5cb629c438ca.png) Разбор домашнего задания HW6
 
 ### ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) 1. <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFbUhMdTdESkpFekE">HW6</a>
 #### Apply 7_01_HW6_fix_tests.patch

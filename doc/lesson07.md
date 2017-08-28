@@ -100,10 +100,11 @@ GROUP BY u.id
 #### Apply 7_12_test_with_matcher.patch
 -  <a href="http://habrahabr.ru/post/259055/">Тестируем Spring Rest контроллеры</a>: проверка JSON-содержимого ответа через собственный ResultMatcher
 
-> - Если не использовать `ModelMatcher`, то тестировать приходится каждое поле, как в `RootControllerTest`.
-> - Матчеры у нас были зарефакторенны: введен `Wrapper` и `Comparator`. Устройство матчеров может показаться сложным (он основан на достаточно сложных hamcrest matchers). Как это работает можно разбираться, только если самому на их основе что-то имплементировать. Мы используем Spring MVC и Hibernate не заботясь о том, насколько они сложные в реализации. Использование матчеров также достаточно просто.
 > - При запуске из Maven тесты начинают зависеть от порядка запуска.  Не проходил тест `ProfileRestControllerTest.testGet`, который шел за `AdminRestControllerTest.testUpdate`: после отката транзакции по `@Transactional` Hibernate кэш не восстанавливал роль для USER (доставалась null). 
 Добавил очистку кэша Hibernate в `AbstractControllerTest.setUp`.
+
+- Если не использовать `ModelMatcher`, то тестировать приходится каждое поле, как в `RootControllerTest`.
+- Матчеры у нас были зарефакторенны: введен `Wrapper` и `Comparator`. Устройство матчеров может показаться сложным (он основан на достаточно сложных hamcrest matchers). Как это работает можно разбираться, только если самому на их основе что-то имплементировать. Мы используем Spring MVC и Hibernate не заботясь о том, насколько они сложные в реализации. Использование матчеров также достаточно просто.
 
 ### ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) 7. <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFVXNmOUdBbUxxWVU">Тестирование через SoapUi. UTF-8</a>
 #### Apply 7_13_soapui_utf8_converter.patch

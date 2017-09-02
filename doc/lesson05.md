@@ -129,9 +129,13 @@
 
 ### ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) 7. <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFajd2Y2RLQVVJWUU">Spring кэш</a>
 #### Apply 8_spring_cache.patch
+> - В случае проблем с размещением кэш в `java.io.tmpdir` (нет доступа) можно
+>    - запусть IDEA _as Administrator_
+>    - захардкодить путь в _src\main\resources\cache\ehcache.xml_, например `<diskStore path="D\tmp">`
+>    - [поменять `java.io.tmpdir`](http://stackoverflow.com/questions/1924136/environment-variable-to-control-java-io-tmpdir)
+
 -  <a href="http://habrahabr.ru/post/113945/">Кеширование в Spring Framework</a>
 -  <a href="http://www.ehcache.org/">EHCACHE</a>
--  В случае проблем с размещением кэш в `java.io.tmpdir` (нет доступа) смотри http://stackoverflow.com/questions/1924136/environment-variable-to-control-java-io-tmpdir
 -  Ресурсы:
    -  <a href="http://docs.spring.io/spring-framework/docs/current/spring-framework-reference/html/cache.html">Spring cache Abstraction</a>
    -  <a href="http://habrahabr.ru/post/25140/">Распределённая система кеша ehcache</a>

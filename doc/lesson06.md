@@ -282,7 +282,9 @@ _ru.javawebinar.topjava.model.User_ - имя региона, которое ис
     </filter-mapping>
 ```
 - 2: Если не поднимается контекст Spring, смотрим верх самого нижнего эксепшена - там написано какого бина у вас нет в контексте и нужно включить в контекст.
-- 3: Если неправильно формируется url относительно контекста приложения (например `/topjava/meals/meals`), посмотрите на <a href="http://stackoverflow.com/questions/4764405/how-to-use-relative-paths-without-including-the-context-root-name">Use relative paths without including the context root name</a>
+- 3: Если неправильно формируется url относительно контекста приложения (например `/topjava/meals/meals`), посмотрите на
+  -  <a href="http://stackoverflow.com/questions/4764405/how-to-use-relative-paths-without-including-the-context-root-name">Relative paths in JSP</a>
+  -  <a href="http://docs.spring.io/spring/docs/3.2.x/spring-framework-reference/html/mvc.html#mvc-redirecting-redirect-prefix">Spring redirect: prefix</a>
 - 4: При проблемах с запуском томкат проверьте запущенные `java` процессы, нет ли в `TOMCAT_HOME\webapps` приложения каталога `topjava`, логи tomcat - нет ли проблем с доступом к каталогам или контекстом Spring.
 - 5: Если создаете List с одним значением или Map с одним ключом-значением, пользуйтесь `Collections.singleton..`
 - 6: В MealController общую часть `@RequestMapping(value = "/meals")` лучше вынести на уровень класса

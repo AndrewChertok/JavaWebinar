@@ -7,7 +7,7 @@
 
 ## ![error](https://cloud.githubusercontent.com/assets/13649199/13672935/ef09ec1e-e6e7-11e5-9f79-d1641c05cbe6.png) Fix/Refactoring
 #### Apply 8_0_1_fix_fetch.patch
-> Тест `DataJpaUserServiceTest.testGetWithMeals()` не работает для admin (у админа 2 роли и еда в JOIN дублируется). `DISTINCT` при несколький JOIN не помогает. 
+> Тест `DataJpaUserServiceTest.testGetWithMeals()` не работает для admin (у админа 2 роли и еда при JOIN дублируется). `DISTINCT` при несколький JOIN не помогает. 
 Оставил в графе только `meals`. Корректно поставить тип `LOAD`, чтобы остальные ассоциации доставались по стратегии модели. Однако [с типом по умолчанию `FETCH` роли также достаются](https://stackoverflow.com/a/46013654/548473)  (похоже что бага).
 
 #### Apply 8_0_2_fix_update.patch
@@ -23,7 +23,7 @@
 #### Apply 8_01_HW07_controller_test.patch
 #### Apply 8_02_HW07_rest_controller.patch
 #### Apply 8_03_jsonassert.patch
-> В тестах заменил `MATCHER_WITH_EXCEED` на валидацию через [JSONassert](https://github.com/skyscreamer/JSONassert), в простом случае его можно рассматривать как замена нашим матчерам 
+> В тестах заменил `MATCHER_WITH_EXCEED` на валидацию через [JSONassert](https://github.com/skyscreamer/JSONassert). В простом случае его можно рассматривать как замена нашим матчерам 
 
 ### ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) 2. <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFLXZ3OHdac18yZlk">HW7_Optional</a>
 #### Apply 8_04_HW07_formatters.patch

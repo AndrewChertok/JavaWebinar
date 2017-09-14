@@ -165,7 +165,7 @@
 - 2: Разделить реализации Repository по профилям Spring: `jdbc`, `jpa`, `datajpa` (общее в профилях можно объединять, например `<beans profile="datajpa,jpa">`). 
   - 2.1: Профили выбора DB (`postgres/hsqldb`) и реализации репозитория (`jdbc/datajpa/jpa`) независимы друг от друга и при запуске задать приложения (тестов) нужно задать тот и другой. 
   - 2.2: Для интеграции с IDEA не забудте выставить в `spring-db.xml` справа вверху в `Change Profiles...` профили, например `datajpa, postgres`
-  - 2.3: Общие части для всех в `spring-db.xml` можно оставить как есть без профилей, но до первого `<beans profile=` (вверху файла).
+  - 2.3: Общие части для всех в `spring-db.xml` можно оставить как есть без профилей вверху файла (до первого `<beans profile=` ).
 - 3: Сделать тесты всех реализаций (`jdbc, jpa, datajpa`) через наследование (без дублирования)
   -  3.1 **сделать один базовый класс для `MealServiceTest` и `UserServiceTest`**.
 - 4: Запустить все тесты: `mvn test` (в IDEA Maven Lifecycle - test, кнопку skipTest отжать)
@@ -193,5 +193,6 @@
 - 9: Проверьте, что все тесты запускаются из Maven (имена классов тестов удовлетворяют соглашению) и итоги тестов класса выводятся корректно (не копятся)
 - 10: `@ActiveProfiles` принимает в качестве параметра строку, либо **массив** строк. В тестах можно задавать несколько `@ActiveProfiles` в разных классах, они суммируются 
 - 11: В релизации 7.1 учесть, что у юзера может отсутствовать еда
-- 12: [Ordering a join fetched collection in JPA using JPQL/HQL
-](http://stackoverflow.com/questions/5903774/ordering-a-join-fetched-collection-in-jpa-using-jpql-hql)
+- 12: [Ordering a join fetched collection in JPA using JPQL/HQL](http://stackoverflow.com/questions/5903774/ordering-a-join-fetched-collection-in-jpa-using-jpql-hql)
+- 13: `<beans profile=` в конфигурации контекста должны находиться после всех остальных объявлений.
+

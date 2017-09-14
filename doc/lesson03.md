@@ -44,7 +44,7 @@
 > - `checkIdConsistent` позволяет в контроллере обновлять еду с `id=null`
 
 #### Apply 4-HW2-optional-filter.patch
-> - Вместо `MealServlet.resetParam` (перемещение параметров фильтрации в аттрибуты запроса для отображения в `meals.jsp`), достаю их в jsp напрямую из запроса через [`${param.xxx}`](https://stackoverflow.com/a/1890462/548473)
+> - Вместо `MealServlet.resetParam` (перемещение параметров фильтрации в атрибуты запроса для отображения в `meals.jsp`), достаю их в jsp напрямую из запроса через [`${param.xxx}`](https://stackoverflow.com/a/1890462/548473)
 > - Сессию будем разбирать, когда будем делать авторизацию.  
 
 

@@ -1,6 +1,6 @@
 # Онлайн проекта <a href="https://github.com/JavaWebinar/topjava">Topjava</a>
 
-### <a href="https://drive.google.com/drive/folders/0B9Ye2auQ_NsFVWRGbEw1RjJrMjg">Материалы занятия</a>
+## <a href="https://drive.google.com/drive/folders/0B9Ye2auQ_NsFVWRGbEw1RjJrMjg">Материалы занятия</a>
 
 - **Браузер кэширует javascript и css. Если изменения не работают, обновите приложение в браузере по Ctrl+F5**
 - **При удалении файлов не забывайте делать clean: `mvn clean package`**
@@ -34,8 +34,7 @@
 
 #### Apply 9_03_HW8_enable_disable.patch
 > - Перенес метод `enable` в `userDatatables.js` и вынес стиль `disabled` в css
-> - Меняю стиль `<tr>` ПОСЛЕ успешной обработки запроса через `toggleClass`
-> - При ошибке возвращаю `checked` в прежнее состояние    
+> - Меняю стиль `<tr>` ПОСЛЕ успешной обработки запроса через `toggleClass` и при ошибке возвращаю `checked` в прежнее состояние    
 > - Убрал `init()`. При переводе таблицы на Ajax вместо него будет `createdRow`. Стили `disabled` добавляются при отрисовки таблицы в JSP
 
 ## Занятие 9:
@@ -105,7 +104,7 @@
  
 #### Apply 9_10_jsp_form_login.patch
 > Рефакторинг
-> - В `login.jsp` вместо аттрибутов достаю параметры запроса (`param.error/message`).
+> - В `login.jsp` вместо атрибутов достаю параметры запроса (`param.error/message`).
 > - Закрыл доступ к `/login` для уже авторизованных в приложении пользователей (в `spring-security.xml` изменил `permitAll` на `isAnonymous`)
 
 -  <a href="http://docs.spring.io/spring-security/site/docs/current/reference/htmlsingle/#ns-form-and-basic">Собственный form-login</a>
@@ -144,7 +143,7 @@
 
 Для хранения сосотяния сессии (например корзины покупателя) в Servlet API есть механизм хранения объектов сессии (грубо- мультимапмапа, которая достается из хранилища по ключу). При создании сессии на стороне сервера (через `request.getSession`) создается кука `JSESSIONID`, которая пеердается между клиентом и сервером и является ключом в хранилище объектов сессий. См. <a href="http://javatutor.net/books/tiej/servlets#_Toc39472970">обработка сессий с помощью сервлетов</a>
 
-> В `login.jsp` есть форма `&lt;form:form action="spring_security_check" ..&gt; Где такой url используется?
+> В `login.jsp` есть форма `&lt;form:form action="spring_security_check" ..&gt;` Где такой url используется?
 
 Это стандартный url для авторизации в `spring-security`. Он его и обрабатывает.
 
@@ -158,8 +157,8 @@
 
 ## ![hw](https://cloud.githubusercontent.com/assets/13649199/13672719/09593080-e6e7-11e5-81d1-5cb629c438ca.png) Домашнее задание HW9
 
-- 1: Реализовать для meal Binding/ Update/ Validation. Проверить работу при пустом значении Calories.
-- 2: Перевести meals.jsp на работу по ajax. Стиль строки таблицы сделать в зависимости от exceeded, время отображать без `T`. Добавить i18n.
+- 1: Реализовать для meal Binding/ Update/ Validation. Проверить работу при пустом значении `calories`.
+- 2: Перевести `meals.jsp` на работу по ajax. Стиль строки таблицы сделать в зависимости от exceeded, время отображать без `T`. Добавить i18n.
 - 3: Починить meals тесты, добавить тест на неавторизованный доступ
 
 #### Optional
@@ -179,7 +178,7 @@ i18n['${key}'] = ...
 ```
 - 3: Для подключения css и js datetimepicker-а посмотрите в его jar (или поищите в проекте по Ctrl+Shift+N: `datetimepicker`)
 - 4: datetimepicker работает корректно в Хроме, если убрать в `type` в `<input type="date/time/datetime-local" ..`
-- 5: Если появляются проблемы с JS типа `... is not defined` - обратите внимание на порядок загрузки скриптов и аттрибут `defer`. Скрипты должны идти в нужном порядке. Если определяете скрипт прямо в jsp, он выполняется до `defer` скриптов.
+- 5: Если появляются проблемы с JS типа `... is not defined` - обратите внимание на порядок загрузки скриптов и атрибут `defer`. Скрипты должны идти в нужном порядке. Если определяете скрипт прямо в jsp, он выполняется до `defer` скриптов.
 - 6: Не дублируйте обработку ошибок в `BindingResult` в ajax контроллерах
 - 7: Проверьте редактирование еды: открыть на редактирование и сохранить не должно приводить к ошибкам с форматом времени.
 - 8: Проверьте в `RootController.meals()`, его нужно тоже поправить

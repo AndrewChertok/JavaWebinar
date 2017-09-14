@@ -75,6 +75,7 @@
 >   - <a href="https://datatables.net/examples/styling/bootstrap.html">DataTables/Bootstrap 3 integration</a>
 > - Вместо id и селектора для добавления пользователя использовал обработчик `onclick` и функцию `add()`
 >   - <a href="https://learn.javascript.ru/introduction-browser-events">Введение в браузерные события</a>
+> - `reset()` не чистит скрытые (hidden) поля формы. Сделал очистку полей через `form.find(":input").val("")`    
 > - Обновил dataTables API:
 >  - <a href="https://datatables.net/upgrade/1.10-convert">Converting parameter names for 1.10</a>
 >  - <a href="http://stackoverflow.com/questions/25207147/datatable-vs-datatable-why-is-there-a-difference-and-how-do-i-make-them-w">dataTable() vs. DataTable()</a>

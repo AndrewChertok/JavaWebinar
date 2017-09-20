@@ -105,7 +105,7 @@ Other validation solution: <a href="http://docs.spring.io/spring/docs/current/sp
 
 - <a href="http://docs.spring.io/spring-security/site/docs/current/reference/htmlsingle/#core-services-password-encoding">Password Encoding</a>
 
-#### Apply 10_14_disable_ui_password.patch
+#### Apply 10_14_read_write_access.patch
 > - Пароль стал encoded, и отдавать его нет смысла. Удалил из сериализации. Пришлось поправить `AdminRestControllerTest.testCreate`, где юзер сериализуется без пароля.  
 > - В реальном приложении для управления паролем необходим отдельный UI интерфейс с подтверждением старого пароля.
 

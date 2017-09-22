@@ -33,6 +33,8 @@ Other validation solution: <a href="http://docs.spring.io/spring/docs/current/sp
 ## Занятие 10:
 
 ### ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) 2. [Кастомизация JSON (@JsonView) и валидации (groups)](https://drive.google.com/file/d/0B9Ye2auQ_NsFRTFsTjVHR2dXczA)
+> Дополнительный материал, если сложно - просто накатите патчи и знайте что есть такая возможность
+
 -  [Что возвращать: Entity или DTOs](https://stackoverflow.com/a/21569720/548473)
 
 #### Apply 10_04_json_view.patch

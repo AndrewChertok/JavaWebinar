@@ -22,7 +22,7 @@
 > - Использую `jsonWithPassword` в `AdminRestControllerTest.testUpdate` и `testCreate`. В `testUpdate` валидации при сохранении не происходит из-за `@Transactional`. См. [решение проблемы с транзакционными тестами](https://stackoverflow.com/a/46415060/548473)
 > - Сделал и использую утильный метод  `TestUtil.contentMatcher`
 
-#### 11_0_4_error_refactoring
+#### Apply 11_0_4_error_refactoring
 > Добавил в `ErrorInfo` тип ошибки `ErrorType`
 
 ## ![hw](https://cloud.githubusercontent.com/assets/13649199/13672719/09593080-e6e7-11e5-81d1-5cb629c438ca.png) Разбор домашнего задания HW10
@@ -40,8 +40,7 @@
 > - Реализавать обработку дублирования `user.email` и `meal.dateTime` можно по разному
 >   - через [поиск в сообщении `DataIntegrityViolationException` имени DB constrains](https://stackoverflow.com/a/42422568/548473)
 >   - через [Controller Based Exception Handling](https://spring.io/blog/2013/11/01/exception-handling-in-spring-mvc#controller-based-exception-handling)
->   - через [Custom Validator](https://howtodoinjava.com/spring/spring-mvc/spring-mvc-custom-validator-example/), с еще одним запросом в базу
-Первый самый простой и расширяемый (хотя зависеть от базы), выбрал его. Для работы с HSQLDB сделал `toLowerCase`. Самый корректный и трудоемкий с собственными валидаторами: он позволяет валидировать в конроллерах, а не при сохранении.
+>   - через [Custom Validator](https://howtodoinjava.com/spring/spring-mvc/spring-mvc-custom-validator-example/), с еще одним запросом в базу. Первый самый простой и расширяемый (хотя зависить от базы), выбрал его. Для работы с HSQLDB сделал `toLowerCase`. Самый корректный и трудоемкий с собственными валидаторами: он позволяет валидировать в конроллерах, а не при сохранении.
 
 > - Сделал утильный класс `MessageUtil` для работы с i18n.
 > - Добавил тесты на дублирование. Отключил транзакционность в тестах на дублирование через `@Transactional(propagation = Propagation.NEVER)`.
@@ -59,8 +58,8 @@
 
 ### Локализация:
 #### Apply 11_06_i18n.patch
- - <a href="http://stackoverflow.com/questions/29929022/change-datatable-search-label/38133762#38133762">Добавил локализацию Search в datatable</a>
  - Вынес общие части опций таблиц в `datatablesUtil.js` используя <a href="https://api.jquery.com/jquery.extend/#jQuery-extend-deep-target-object1-objectN">jQuery.extend()</a>
+ - Добавил <a href="http://stackoverflow.com/questions/29929022/change-datatable-search-label/38133762#38133762">локализацию Search в datatable</a>
  - Сделал локализацию ошибок валидации:
    - Все коды для локализации конкретной ошибки валидации можно посмотреть в дебаге: `FieldError.getCodes()`
    - Коды для ее аргументов: `FieldError.getArguments()` (аргумент складывается из имени класса и поля).
@@ -76,9 +75,8 @@
 - <a href="https://habrahabr.ru/post/66057/">XSS глазами злоумышленника</a>
 - <a href="http://stackoverflow.com/a/40644276/548473">Prevent people from doing XSS in Spring MVC</a>
 
-### Обработка ошибок 404 (NotFound)
+### [Обработка ошибок 404 (NotFound)](https://stackoverflow.com/questions/18322279/spring-mvc-spring-security-and-error-handling)
 #### Apply 11_08_404.patch
-- [Teat 404 NotFound with MVC Spring Security](https://stackoverflow.com/questions/18322279/spring-mvc-spring-security-and-error-handling)
 
 ### Доступ к AuthorizedUser
 #### Apply 11_09_auth_user.patch

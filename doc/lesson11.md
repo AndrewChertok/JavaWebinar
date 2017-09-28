@@ -17,10 +17,9 @@
 #### Apply 11_0_2_validation_refactoring
 > Сделал `View$Persist` группу для валидации [при сохранении через JPA](https://stackoverflow.com/a/16930663/548473). Т.к. отнаследовал ее от `javax.validation.groups.Default`, при персисте учитываются все непомеченные аннотации валидации (`Default`) + помеченные `Persist`.
 
-#### 11_0_3_test_refactoring
+#### Apply 11_0_3_test_refactoring
 > - Сделал метод `JsonUtil.writeWithExtraProps` и `UserTestData.jsonWithPassword` для сериализации в json юзера с паролем
-> - Использую `jsonWithPassword` в `AdminRestControllerTest.testUpdate` и `testCreate`. В `testUpdate` ошибка скрывалась `@Transactional`, который в конце теста делает откат базы и
-и валидации при сохранении не происходит. См. [решение проблемы с транзакционными тестами](https://stackoverflow.com/a/46415060/548473)
+> - Использую `jsonWithPassword` в `AdminRestControllerTest.testUpdate` и `testCreate`. В `testUpdate` валидации при сохранении не происходит из-за `@Transactional`. См. [решение проблемы с транзакционными тестами](https://stackoverflow.com/a/46415060/548473)
 > - Сделал и использую утильный метод  `TestUtil.contentMatcher`
 
 #### 11_0_4_error_refactoring

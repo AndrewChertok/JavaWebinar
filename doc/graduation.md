@@ -62,3 +62,4 @@ P.P.S.: Asume that your API will be used by a frontend developer to build fronte
 - 19: Проверьте, не торчат ли из кода учебные уши topjava, типа `ProfileRestController.testUTF()`, `AbstractServiceTest.printResult()` или закомментированные `JdbcTemplate`. Назначение этого проекта совсем другое.
 - 20: ORM работает с объектами. [В простейших случаях fk_id как поля допустимы](https://stackoverflow.com/questions/6311776/hibernate-foreign-keys-instead-of-entities), но при этом JPA их уже никак не обрабатывает и не используйте их вместе с объектами.  Ссылка на stackoverwrflow в коде обязательна!
 - 21: Проверьте, станет ли код проще с `@AuthenticationPrincipal` (урок 11, Доступ к AuthorizedUser). С ним можно убрать из `AuthorizedUser` все статические методы.
+- 22: Проверьте самый типичный сценарий: сколько запросов в базу нужно сделать по вашему API.
